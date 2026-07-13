@@ -1,0 +1,5 @@
+node_modules/
+dist/
+
+# example-generated ceremony state (contains demo keypairs; never commit)
+examples/**/doorcheck-state.json

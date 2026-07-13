@@ -1,0 +1,63 @@
+{
+	"name": "@prefig/upact-ember",
+	"version": "0.1.0",
+	"description": "upact adapter for ember presence credentials. Verifier-side: offline Ed25519 chain-of-renewal verification, encounter-bound sessions, the first shipped 'represence' lifecycle. Substrate: @prefig/ember.",
+	"license": "Apache-2.0",
+	"type": "module",
+	"main": "./dist/index.js",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js"
+		}
+	},
+	"files": [
+		"dist",
+		"README.md",
+		"LICENSE",
+		"CONFORMANCE.md",
+		"CHANGELOG.md"
+	],
+	"engines": {
+		"node": ">=18"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"sideEffects": false,
+	"keywords": [
+		"upact",
+		"upact-adapter",
+		"ember",
+		"proof-of-presence",
+		"ed25519",
+		"credential",
+		"offline-verification",
+		"identity-port",
+		"privacy-by-design"
+	],
+	"author": "Theodore Evans",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/prefig/upact-ember.git"
+	},
+	"peerDependencies": {
+		"@prefig/ember": "^0.1.0",
+		"@prefig/upact": "^0.1.2"
+	},
+	"scripts": {
+		"build": "tsc",
+		"test": "vitest run",
+		"test:watch": "vitest",
+		"typecheck": "tsc --noEmit",
+		"prepublishOnly": "npm run build && npm test"
+	},
+	"//": "TODO: flip the @prefig/ember devDependency from file:../ember to ^0.1.0 at release (ember is not yet published to npm). TODO: flip the @prefig/upact devDependency from file:../../upact to ^0.1.2 once 0.1.2 is published (npm has only 0.1.1).",
+	"devDependencies": {
+		"@prefig/ember": "file:../ember",
+		"@prefig/upact": "file:../../upact",
+		"@types/node": "^22.0.0",
+		"typescript": "^5.0.0",
+		"vitest": "^3.0.0"
+	}
+}
