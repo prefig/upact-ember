@@ -124,7 +124,7 @@ See `CONFORMANCE.md` for the full conformance statement and the `AuthError` mapp
 
 ## Status
 
-v0.1.0. First public release. Breaking changes between v0.x revisions are permitted; v1.0 marks the first stable version.
+v0.1.1. Breaking changes between v0.x revisions are permitted; v1.0 marks the first stable version.
 
 ## Licence
 

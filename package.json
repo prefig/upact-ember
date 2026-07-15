@@ -1,6 +1,6 @@
 {
 	"name": "@prefig/upact-ember",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "ember adapter for upact.",
 	"license": "Apache-2.0",
 	"type": "module",
@@ -54,8 +54,8 @@
 	},
 	"//": "TODO: flip the @prefig/ember devDependency from file:../ember to ^0.1.0 at release (ember is not yet published to npm). TODO: flip the @prefig/upact devDependency from file:../../upact to ^0.1.2 once 0.1.2 is published (npm has only 0.1.1).",
 	"devDependencies": {
-		"@prefig/ember": "file:../ember",
-		"@prefig/upact": "file:../../upact",
+		"@prefig/ember": "^0.1.0",
+		"@prefig/upact": "^0.1.2",
 		"@types/node": "^22.0.0",
 		"typescript": "^5.0.0",
 		"vitest": "^3.0.0"
