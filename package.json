@@ -1,7 +1,7 @@
 {
 	"name": "@prefig/upact-ember",
 	"version": "0.1.0",
-	"description": "upact adapter for ember presence credentials. Verifier-side: offline Ed25519 chain-of-renewal verification, encounter-bound sessions, the first shipped 'represence' lifecycle. Substrate: @prefig/ember.",
+	"description": "ember adapter for upact.",
 	"license": "Apache-2.0",
 	"type": "module",
 	"main": "./dist/index.js",
