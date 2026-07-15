@@ -2,19 +2,19 @@
 
 [upact](https://github.com/prefig/upact) adapter for [ember](https://github.com/prefig/ember) presence credentials. Verifier-side: the adapter mints challenges, consumes proof or presentation bytes, and answers "who is this member and are they currently valid" through the standard `IdentityPort`. Verification is fully offline Ed25519 chain checking; there is no server, no registry, and no network call anywhere in the adapter. This is the first shipped adapter with a `renewable: 'represence'` lifecycle: credentials expire, and the only renewal path is a fresh in-presence ceremony.
 
-## What this adapter is, and is not
+## The verifier at an encounter
 
-This is the **verifier at an encounter** (a door check, a session gate, a meeting entry point). One adapter instance corresponds to one verified encounter; all state lives in the factory closure and dies with it.
+The adapter is the verifier's side of an encounter (a door check, a session gate, a meeting entry point). One adapter instance corresponds to one verified encounter; all state lives in the factory closure and dies with it.
 
-It is **not the holder keyring**. No private key ever enters the adapter; members hold their own credentials and answer challenges on their own devices. It is **not the renewal ceremony** either. Granting and renewing credentials is a member-steward exchange that happens out of band (in ember's demo, a QR handshake between two phones). The adapter only ever sees the resulting proof or presentation bytes.
+Members hold their own credentials and answer challenges on their own devices, so no private key ever enters the adapter. Granting and renewing credentials is a member-steward exchange that happens out of band (in ember's demo, a QR handshake between two phones); the adapter only ever sees the resulting proof or presentation bytes.
 
 ## Install
 
 ```bash
-npm install @prefig/upact @prefig/upact-ember
+npm install @prefig/upact @prefig/upact-ember @prefig/ember
 ```
 
-`@prefig/ember` is a peer dependency and is not yet published to npm; install it from its repository until it is. The adapter itself has no runtime dependencies beyond the Web Crypto API. Runs in Node 18 and later, and in any Web-platform runtime.
+`@prefig/upact` and `@prefig/ember` are peer dependencies. The adapter itself has no runtime dependencies beyond the Web Crypto API. Runs in Node 18 and later, and in any Web-platform runtime.
 
 ## Usage
 
@@ -102,7 +102,7 @@ The adapter consumes the response side through `authenticate({ kind: 'ember-pres
 
 ## Capabilities
 
-`Upactor.capabilities` is always `[]` for this adapter at v0.1. Ember's substrate affordances (multi-scope portfolios, in-presence renewal) are not declared as capabilities pre-emptively, per the [project's audit discipline](https://github.com/prefig/upact/blob/main/CONTRIBUTING.md). New capabilities land when a concrete consumer surfaces.
+`Upactor.capabilities` is always `[]` for this adapter at v0.1. Ember's substrate affordances (multi-scope portfolios, in-presence renewal) are not declared as capabilities pre-emptively: per the project's audit discipline, new capabilities land when a concrete consumer surfaces.
 
 ## Security posture
 
@@ -126,6 +126,6 @@ See `CONFORMANCE.md` for the full conformance statement and the `AuthError` mapp
 
 v0.1.0. First public release. Breaking changes between v0.x revisions are permitted; v1.0 marks the first stable version.
 
-## License
+## Licence
 
 Apache-2.0. See `LICENSE`.
